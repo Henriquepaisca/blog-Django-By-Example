@@ -10,6 +10,8 @@ class PostListView(ListView):
     paginate_by = 3
     template_name = 'blog/post/list.html'
 
+# def post_new()
+
 
 def post_list(request):
     object_list = Post.published.all()
