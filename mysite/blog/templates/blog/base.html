@@ -1,22 +1,14 @@
 {% load staticfiles %}
-<!DOCTYPE html>
-{% load staticfiles %}
-<html>
-  <head>
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
-  </head>
-  <body>
-    <!--Import jQuery before materialize.js-->
-    {% block footer %}
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
-    {% endblock %}
-  </body>
+{% load material_form %}
 
+<!DOCTYPE html>
+<html>
 <head>
   <title>{% block title %}{% endblock %}</title>
   <link href="{% static "css/blog.css" %}" rel="stylesheet">
+  {% include 'material/includes/material_css.html' %}
+  <script src="{% static 'material/js/jquery-2.2.0.js' %}"></script>
+  {% include 'material/includes/material_js.html' %}
 </head>
 <body>
   <div id="content">
@@ -26,6 +18,8 @@
   <div id="sidebar">
     <h2>Blog do Carlos Henrique</h2>
       <p>This is my blog.</p>
+        <a class="waves-effect waves-light btn" href="new">Novo Post</a>
+        <a class="waves-effect waves-light btn white black-text" onclick="javascript:history.go(-1);"><ii class="material-icons left">replay</i>Voltar</a>
   </div>
 </body>
 </html>

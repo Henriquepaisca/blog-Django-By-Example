@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block title %}New Post{% endblock %}
+{% block content %}
+  <h1>Novo Post</h1>
+  <p>Titulo</p>
+  <form method="POST" class="post-form">
+    {% csrf_token %}
+    {{ new_post.title }}
+    {{ new_post.body }}
+      <button type="submit" class="waves-effect waves-light btn">Submit</button>
+  </form>
+{% endblock %}
